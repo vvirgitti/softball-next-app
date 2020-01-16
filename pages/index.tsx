@@ -1,17 +1,21 @@
-import React, { useState, FormEvent } from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
+
+type FormElem = React.FormEvent<HTMLFormElement>;
+
+interface IPlayer {
+  name: string
+}
 
 const Index: React.FC = () => {
   const [playerName, setPlayerName] = useState('')
-  const [playersList, setPlayersList] = useState([playerName])
+  const [playersList, setPlayersList] = useState<IPlayer[]>([])
 
-  const handleNameChange = (event: { target: HTMLInputElement }) => {
-    setPlayerName(event.target.value)
-  }
-
-  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-    setPlayersList([...playersList, playerName])
+  const handleSubmit = (e: FormElem): void => {
+    e.preventDefault()
+    const newPlayersList: IPlayer[] = [...playersList, { name: playerName }]
+    setPlayersList(newPlayersList)
+    setPlayerName('')
   }
 
   return (
@@ -39,8 +43,9 @@ const Index: React.FC = () => {
                 aria-describedby="playerName" 
                 data-testid="nameInput"
                 placeholder="Enter name"
-                onChange={handleNameChange} 
+                onChange={e => setPlayerName(e.target.value)} 
                 value={playerName}
+                required
               />
             </div>
             <button type="submit" className="btn btn-primary float-right">Add player</button>
@@ -48,7 +53,7 @@ const Index: React.FC = () => {
         </div>
         <div className="col">
           <h2>Roster</h2>
-            {playersList.length > 1 ? <ul>{playersList.map(player => <li key={player}>{player}</li>)}</ul> : <></>}
+            <ul>{playersList.map(player => <li key={player.name}>{player.name}</li>)}</ul>
         </div>
 
       </div>
