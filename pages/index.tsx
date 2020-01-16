@@ -7,7 +7,7 @@ interface IPlayer {
   name: string
 }
 
-const Index: React.FC = () => {
+const App: React.FC = () => {
   const [playerName, setPlayerName] = useState('')
   const [playersList, setPlayersList] = useState<IPlayer[]>([])
 
@@ -62,4 +62,4 @@ const Index: React.FC = () => {
   )
 }
 
-export default Index
+export default App
