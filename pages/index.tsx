@@ -22,6 +22,10 @@ const App: React.FC = () => {
     setPlayerGender('')
   }
 
+  const handleGenderChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
+    setPlayerGender(e.target.value)
+  }
+
   return (
     <>
       <Head>
@@ -57,9 +61,9 @@ const App: React.FC = () => {
                 <input 
                   className="form-check-input" 
                   type="radio" 
-                  id="gender-male" 
+                  data-testid="gender-male" 
                   value="Male" 
-                  onChange={e => setPlayerGender(e.target.value)} 
+                  onChange={handleGenderChange} 
                   checked={playerGender === 'Male'} 
                 />
                 <label className="form-check-label">Male</label>
@@ -68,9 +72,9 @@ const App: React.FC = () => {
                 <input 
                   className="form-check-input" 
                   type="radio" 
-                  id="gender-female" 
+                  data-testid="gender-female" 
                   value="Female" 
-                  onChange={e => setPlayerGender(e.target.value)} 
+                  onChange={handleGenderChange} 
                   checked={playerGender === 'Female'} 
                 />
                 <label className="form-check-label">Female</label>

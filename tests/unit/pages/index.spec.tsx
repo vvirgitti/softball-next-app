@@ -24,4 +24,22 @@ describe('App', () => {
     const name = getByText('Orla')
     expect(getNodeText(name)).toEqual('Orla')
   })
+
+  it('adds a player and diplays name and gender', () => {
+    const { getByText, getByTestId } = render(<App />)
+
+    userEvent.type(getByTestId('nameInput'), 'Orla')
+    expect(getByTestId('nameInput')).toHaveAttribute('value', 'Orla')
+
+    fireEvent.click(getByTestId('gender-female'))
+
+    const button = getByText('Add player')
+    fireEvent.click(button)
+
+    const name = getByText('Orla')
+    expect(getNodeText(name)).toEqual('Orla')
+
+    const gender = getByTestId('Female')
+    expect(getNodeText(gender)).toEqual('Female')
+  })
 })

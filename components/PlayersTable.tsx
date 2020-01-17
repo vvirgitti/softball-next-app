@@ -10,7 +10,7 @@ const PlayersTable = ({players} : PlayersTableProps) => {
   <tr key={`${player.name}-${player.gender}-${index}`}>
     <th scope="row" key={index}>{index + 1}</th>
     <td key={`${player.name}-${index}`}>{player.name}</td>
-    <td key={`${player.gender}-${index}`}>{player.gender}</td>
+    <td key={`${player.gender}-${index}`} data-testid={player.gender}>{player.gender}</td>
   </tr>
 )
   return (
