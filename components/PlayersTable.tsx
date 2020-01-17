@@ -6,7 +6,13 @@ interface PlayersTableProps {
 }
 
 const PlayersTable = ({players} : PlayersTableProps) => {
-  console.log('>>>>>> players', players)
+  const playersRow = players.map((player, index) =>
+  <tr key={`${player.name}-${player.gender}-${index}`}>
+    <th scope="row" key={index}>{index + 1}</th>
+    <td key={`${player.name}-${index}`}>{player.name}</td>
+    <td key={`${player.gender}-${index}`}>{player.gender}</td>
+  </tr>
+)
   return (
     <>
       <h2>Roster</h2>
@@ -19,15 +25,7 @@ const PlayersTable = ({players} : PlayersTableProps) => {
           </tr>
         </thead>
         <tbody>
-          {
-            players.map((player, index) =>
-              <tr>
-                <th scope="row" key={index}>{index + 1}</th>
-                <td key={`${player.name}-${index}`}>{player.name}</td>
-                <td key={`${player.gender}-${index}`}>{player.gender}</td>
-              </tr>
-            )
-          }
+          {playersRow}
         </tbody>
       </table>
     </>
