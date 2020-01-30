@@ -4,7 +4,7 @@ import '@testing-library/jest-dom/extend-expect'
 import PlayersTable from '../../../components/PlayersTable'
 
 describe('PlayersTable', () => {
-  it('diplays a table with the player\'s name and gender', () => {
+  it('diplays a table with the players\' name and gender', () => {
     const players = [{name: 'Orla', gender: 'Female'}, {name: 'Tom', gender: 'Male'}]
     const { getByText } = render(<PlayersTable players={players} />)
     const orla = getByText('Orla')
