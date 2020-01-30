@@ -18,6 +18,7 @@ describe('App', () => {
     expect(getByTestId('nameInput')).toHaveAttribute('value', 'Orla')
 
     const button = getByText('Add player')
+
     fireEvent.click(button)
 
     const name = getByText('Orla')

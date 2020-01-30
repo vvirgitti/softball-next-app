@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import Header from '../components/Header'
 import PlayersTable from '../components/PlayersTable'
 
 type FormElem = React.FormEvent<HTMLFormElement>;
@@ -28,7 +27,6 @@ const App: React.FC = () => {
 
   return (
     <>
-      <Header />
       <nav className="navbar navbar-light bg-light">
         <span className="navbar-brand mb-0 h1">Lineup Builder</span>
       </nav>
