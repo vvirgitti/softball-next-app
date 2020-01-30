@@ -9,4 +9,4 @@ coverage/
 dist
 
 # credentials
-server/firebase-credentials.json
+# services/firebase-credentials.json
