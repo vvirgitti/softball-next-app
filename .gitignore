@@ -7,3 +7,6 @@ coverage/
 
 # production server output
 dist
+
+# credentials
+server/firebase-credentials.json

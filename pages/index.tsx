@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import PlayersTable from '../components/PlayersTable'
+import database from '../services/database'
 
 type FormElem = React.FormEvent<HTMLFormElement>;
 
@@ -17,6 +18,7 @@ const App: React.FC = () => {
     e.preventDefault()
     const newPlayersList: IPlayer[] = [...playersList, { name: playerName, gender: playerGender }]
     setPlayersList(newPlayersList)
+    database.savePlayer({ name: playerName, gender: playerGender})
     setPlayerName('')
     setPlayerGender('')
   }
