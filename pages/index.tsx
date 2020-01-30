@@ -74,6 +74,17 @@ const App: React.FC = () => {
                 />
                 <label className="form-check-label">Female</label>
               </div>
+              <div className="form-check form-check-inline">
+                <input 
+                  className="form-check-input" 
+                  type="radio" 
+                  data-testid="gender-nonBinary" 
+                  value="Non Binary" 
+                  onChange={handleGenderChange} 
+                  checked={playerGender === 'Non Binary'} 
+                />
+                <label className="form-check-label">Non Binary</label>
+              </div>
             </div>
             <button type="submit" className="btn btn-primary float-right">Add player</button>
           </form>
