@@ -2,11 +2,11 @@
 
 Simple lineup softball app built with Next.js
 
-[x] Create a player
-[x] Display a list of players on the page
-[ ] Save player in a DB
-[ ] Read from a DB
-[ ] Create a lineup
+- [x] Create a player
+- [x] Display a list of players on the page
+- [ ] Save player in a DB
+- [ ] Read from a DB
+- [ ] Create a lineup
 
 ## How to use
 
