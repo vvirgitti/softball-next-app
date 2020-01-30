@@ -5,7 +5,7 @@ interface PlayersTableProps {
   players: IPlayer[]
 }
 
-const PlayersTable = ({players} : PlayersTableProps) => {
+const PlayersTable: React.FC <PlayersTableProps> = ({players} : PlayersTableProps) => {
   const playersRow = players.map((player, index) =>
   <tr key={`${player.name}-${player.gender}-${index}`}>
     <th scope="row" key={index}>{index + 1}</th>
